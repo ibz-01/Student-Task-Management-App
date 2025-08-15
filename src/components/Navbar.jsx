@@ -1,19 +1,21 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Link } from "react-router-dom";
+import DarkMode from "./DarkMode";
 
 
 export default function Navbar() {
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light"
-      style={{ backgroundColor: "#697279ff", border: "2px solid grey" }}
+      style={{ backgroundColor: "#205769ff", border: "2px solid grey" }}
     >
       <Link className="nav-link" to="/">
-        <b> Task Management App </b>
+        <b> Weekly Planner App </b>
       </Link>
 
       <div className="d-flex ms-auto align-items-center">
+        <DarkMode />
         <button
           className="navbar-toggler ms-2"
           type="button"
@@ -39,11 +41,7 @@ export default function Navbar() {
               Add Task
             </Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/calendar">
-              Calendar
-            </Link>
-          </li>
+          
           <li className="nav-item">
             <Link className="nav-link" to="/ViewTasks">
               View Tasks

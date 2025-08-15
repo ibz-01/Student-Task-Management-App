@@ -6,14 +6,14 @@ import Navbar from "./components/Navbar";
 import ViewTasks from "./pages/ViewTasks";
 
 
-
-
 function App() {
 
 
   return (
     <Router>
       <Navbar />
+      
+      
       
       <Routes>
         <Route path="/" element={<Home />} />

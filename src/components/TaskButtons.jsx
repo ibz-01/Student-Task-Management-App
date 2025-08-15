@@ -7,6 +7,7 @@ import EventNoteIcon from "@mui/icons-material/EventNote";
 import { Link } from "react-router-dom";
 
 
+
 export default function Buttons()
 {
 
@@ -25,15 +26,18 @@ export default function Buttons()
           </Button>
         </Link>
 
-        <Button
-          className="delBtn"
-          variant="outlined"
-          color="error"
-          size="large"
-          startIcon={<DeleteIcon />}
-        >
-          Delete Task
-        </Button>
+        {/* <Link to="/viewtasks">
+          <Button
+            className="delBtn"
+            variant="outlined"
+            color="error"
+            size="large"
+            startIcon={<DeleteIcon />}
+            onClick={() => deleteTask(index)}
+          >
+            Delete Task
+          </Button>
+        </Link> */}
 
         <Link to="/viewtasks">
           <Button

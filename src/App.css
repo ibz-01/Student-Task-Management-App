@@ -1,8 +1,8 @@
 
-body {
+.body {
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: #1a1a1a;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -95,4 +95,161 @@ header h2 {
 
 .add-task-container button:hover {
   background-color: #0056b3;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color:rgba(0, 0, 0, 0.05)
+}
+
+.task-card {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-title {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.task-day h3 {
+  color: #2e2c2c;
+  margin-bottom: 0.3rem;
+}
+
+.task-day ul {
+  list-style: none;
+  padding: 0;
+}
+
+.task-day li {
+  margin-bottom: 0.3rem;
+  color: rgb(72, 70, 66)
+}
+
+
+/* Carousel wrapper */
+#carousel-dates {
+  max-width: 800px;
+  /* Width of carousel */
+  margin: 2rem auto;
+  /* Center carousel with top/bottom margin */
+  border-radius: 12px;
+  /* Rounded edges */
+  overflow: hidden;
+  /* Round corners apply to inner content */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  /* Subtle shadow */
+}
+
+/* Carousel slides */
+#carousel-dates .carousel-item .slide-content {
+  min-height: 350px;
+  /* Increase slide height */
+  padding: 2.5rem 2rem;
+  /* Inner padding for breathing space */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* Start from top */
+  align-items: center;
+  text-align: center;
+  color: white;
+  transition: background-color 0.5s ease;
+}
+
+/* Alternate slide colors */
+#carousel-dates .carousel-item:nth-child(odd) .slide-content {
+  background-color: #294c70;
+  /* Dark blue */
+}
+
+#carousel-dates .carousel-item:nth-child(even) .slide-content {
+  background-color: #5693d0;
+  /* Lighter blue */
+}
+
+/* Slide heading */
+#carousel-dates .carousel-item h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Slide list */
+#carousel-dates .carousel-item ul {
+  list-style-type: disc;
+  /* Show bullets */
+  padding-left: 1.5rem;
+  /* Indent bullets */
+  text-align: left;
+  /* Keep bullets left-aligned */
+  max-width: 90%;
+  /* Limit width of the list */
+}
+
+/* Slide list items */
+#carousel-dates .carousel-item ul li {
+  margin-bottom: 0.75rem;
+  /* Space between tasks */
+  line-height: 1.5rem;
+  /* Improve readability */
+  font-size: 1rem;
+}
+
+/* Carousel controls */
+#carousel-dates .carousel-control-prev-icon,
+#carousel-dates .carousel-control-next-icon {
+  filter: invert(1);
+  /* Make controls visible on dark backgrounds */
+}
+
+
+/* Modern Header Styling */
+.header {
+  background: linear-gradient(135deg, #294c70, #5693d0);
+  /* Gradient blue */
+  color: #ffffff;
+  /* White text */
+  padding: 2rem 2.5rem;
+  /* More padding for spacious look */
+  text-align: center;
+  /* Centered text */
+  border-radius: 16px;
+  /* Rounded corners */
+  margin: 1.5rem auto;
+  /* Top/bottom margin and auto horizontal centering */
+  max-width: 900px;
+  /* Limit width for better layout */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  /* Soft shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Smooth hover effect */
+}
+
+.header:hover {
+  transform: translateY(-4px);
+  /* Slight lift on hover */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+  /* Slightly stronger shadow */
+}
+
+.header .greeting {
+  font-size: 2.2rem;
+  /* Slightly larger greeting */
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+
+.header .date-time {
+  font-size: 1.3rem;
+  font-weight: 500;
+  opacity: 0.9;
+  color: #ccc;
+  /* Slightly transparent for softer look */
 }

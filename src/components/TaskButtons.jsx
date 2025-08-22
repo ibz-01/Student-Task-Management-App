@@ -26,18 +26,7 @@ export default function Buttons()
           </Button>
         </Link>
 
-        {/* <Link to="/viewtasks">
-          <Button
-            className="delBtn"
-            variant="outlined"
-            color="error"
-            size="large"
-            startIcon={<DeleteIcon />}
-            onClick={() => deleteTask(index)}
-          >
-            Delete Task
-          </Button>
-        </Link> */}
+        
 
         <Link to="/viewtasks">
           <Button

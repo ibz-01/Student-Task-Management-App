@@ -1,26 +1,10 @@
 import CarouselDisplay from "./CarouselDislay";
+import { getDateLabel } from "../utilities/CarouselDataUtils";
 
 
 export default function CarouselData({ tasks = [] }) {
-  const today = new Date();
-  const tomorrow = new Date();
-  tomorrow.setDate(today.getDate() + 1);
+  
 
-  const getDateLabel = (dateString) => {
-    const [weekday, month, day] = dateString.replace(",", "").split(" "); // ["Friday", "August", "16"]
-    const dateObj = new Date(`${month} ${day}, ${new Date().getFullYear()}`); // Add current year
-
-    dateObj.setHours(0, 0, 0, 0);
-    today.setHours(0, 0, 0, 0);
-    tomorrow.setHours(0, 0, 0, 0);
-
-    if (dateObj.getTime() === today.getTime()) return "Today";
-    if (dateObj.getTime() === tomorrow.getTime()) return "Tomorrow";
-    return dateString;
-  };
-
-
-  // Flatten all subtasks
   const allSubtasks = tasks.flatMap((task) =>
     task.days.flatMap((day) =>
       day.subtasks.map((subtask) => ({
@@ -32,7 +16,6 @@ export default function CarouselData({ tasks = [] }) {
     )
   );
 
-  // Group tasks by date
   const groupedTasks = allSubtasks.reduce((acc, t) => {
     const label = getDateLabel(t.day);
     if (!acc[label]) acc[label] = [];

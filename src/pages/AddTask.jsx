@@ -2,6 +2,8 @@ import { useState } from "react";
 import { getTasks } from "../ai_addtask";
 import { useContext } from "react";
 import { TaskContext } from "../components/TaskList";
+import { resolveConflicts } from "../utilities/addTaskUtils";
+
 
 export default function AddTask() {
 
@@ -22,6 +24,9 @@ export default function AddTask() {
 
     const output = await getTasks(title,description,deadline,instructions,tasks);
     
+    const fixedOutput = resolveConflicts(output, tasks);
+
+    setTasks((prev) => [...prev, fixedOutput]);
 
     setTimeout( () => {
 

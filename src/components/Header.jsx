@@ -36,13 +36,13 @@ export default function Header()
 
 
     if (hour > 6 && hour < 12) {
-      greeting = "Good Morning, user!";
+      greeting = "Good Morning!";
     } else if (hour >= 12 && hour < 18) {
-      greeting = "Good Afternoon, user!";
+      greeting = "Good Afternoon!";
     } else if (hour >= 18 && hour <= 22) {
-      greeting = "Good Evening, user!";
+      greeting = "Good Evening!";
     } else {
-      greeting = "Good Night, user!";
+      greeting = "Good Night!";
     }
 
     const [greetUser] = useState(greeting)

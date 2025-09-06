@@ -18,7 +18,7 @@ export default function ViewTasks() {
       {tasks.map((task, index) => (
         <Collapse
           key={index}
-          id={`collapse-task-${index}`} // unique ID
+          id={`collapse-task-${index}`} 
           title={task.title}
           text={
             <div className="task-card">

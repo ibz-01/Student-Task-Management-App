@@ -1,4 +1,3 @@
-// DarkMode.jsx
 import React, { useState, useEffect } from "react";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 

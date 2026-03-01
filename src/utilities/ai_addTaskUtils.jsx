@@ -59,30 +59,29 @@ Rules:
   `;
 }
 
-export function parseAiOutput(AiOutput, title) 
-{
-    AiOutput = AiOutput.replace(/```json\s*|\s*```/g, "").trim();
-    let parsed;
-    try {
-      parsed = JSON.parse(AiOutput);
-    } catch (e) {
-      console.error("AI output is not valid JSON", e, AiOutput);
-      return null;
-    }
+export function parseAiOutput(AiOutput, title) {
+  AiOutput = AiOutput.replace(/```json\s*|\s*```/g, "").trim();
+  let parsed;
+  try {
+    parsed = JSON.parse(AiOutput);
+  } catch (e) {
+    console.error("AI output is not valid JSON", e, AiOutput);
+    return null;
+  }
 
-    return {
-      title,
-      days: parsed.reduce((acc, item) => {
-        let dayObj = acc.find((d) => d.date === item.day);
-        if (!dayObj) {
-          dayObj = { date: item.day, subtasks: [] };
-          acc.push(dayObj);
-        }
-        dayObj.subtasks.push({
-          time: `${item.start}-${item.end}`,
-          name: item.task,
-        });
-        return acc;
-      }, []),
-    };
+  return {
+    title,
+    days: parsed.reduce((acc, item) => {
+      let dayObj = acc.find((d) => d.date === item.day);
+      if (!dayObj) {
+        dayObj = { date: item.day, subtasks: [] };
+        acc.push(dayObj);
+      }
+      dayObj.subtasks.push({
+        time: `${item.start}-${item.end}`,
+        name: item.task,
+      });
+      return acc;
+    }, []),
+  };
 }

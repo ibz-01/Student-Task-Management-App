@@ -7,18 +7,21 @@ export default function ViewTasks() {
   const { tasks } = useContext(TaskContext);
 
   if (!Array.isArray(tasks) || tasks.length === 0) {
-    return <p>No tasks available</p>;
+    return (
+      <div className="empty-state">
+        <div className="empty-state-icon">📋</div>
+        <h3>No tasks yet</h3>
+        <p>Add your first task and let AI create a study plan for you.</p>
+      </div>
+    );
   }
 
   return (
-
-    
-
     <div className="task-list">
       {tasks.map((task, index) => (
         <Collapse
           key={index}
-          id={`collapse-task-${index}`} 
+          id={`collapse-task-${index}`}
           title={task.title}
           text={
             <div className="task-card">
@@ -31,13 +34,13 @@ export default function ViewTasks() {
                       {Array.isArray(day.subtasks) &&
                         day.subtasks.map((sub, j) => (
                           <li key={j}>
-                            {sub.time}: {sub.name}
+                            <strong>{sub.time}</strong> — {sub.name}
                           </li>
                         ))}
                     </ul>
                   </div>
                 ))}
-                <DeleteButton id={index}/>
+              <DeleteButton id={index} />
             </div>
           }
         />
